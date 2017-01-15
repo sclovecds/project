@@ -1,0 +1,70 @@
+/*网站常用css样式*/
+//设置标签的内外边距和盒模型
+body, div, span, h1, h2, h3, h4, h5, h6, p, em, img, strong, b, small, u, i, center, dl, dt, dd, ol, ul, li, sub, sup, tt, var, del, dfn, ins, kbd, q, s, samp, strike, applet, object, iframe, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, blockquote, pre, a, abbr, acronym, address, big, cite, code, mark, audio, video, input, textarea, select {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+//设置 or 清除浮动
+.fl {
+	float: left;
+}
+
+.fr {
+	float: right;
+}
+
+.clearfix {
+	*zoom: 1;
+	&:after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+}
+
+//a标签
+a {
+	text-decoration: none;
+	color: inherit;
+	&:hover {
+		color: $themecolor;
+		text-decoration: underline;
+	}
+}
+
+//设置元素display为inline-block 时能够自动剧中
+.dpib {
+	font-size: 0;
+	text-align: justify;
+	&:after {
+		content: '';
+		display: inline-block;
+		width: 100%;
+		height: 0;
+	}
+}
+
+//文字超出自动隐藏
+.tow{
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+html {
+	font-size: 125%;
+	font-family:"Microsoft YaHei";
+	-webkit-text-size-adjust:none;	//可用可不用  解决谷歌浏览器字体小于12px时依旧显示12px的bug
+	overflow-x: hidden;
+	color: $wzcolor;
+}
+
+ul li {
+	list-style: none;
+}
+
+.container{
+	@include vertical-center($kswidth);
+}

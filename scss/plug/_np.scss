@@ -1,0 +1,46 @@
+/*文章标题*/
+.article-title {
+	text-align: center;
+	font-size:22px;
+	color: #000;
+	line-height:2;
+}
+.article-info {
+	text-align: center;
+	font-size:14px;
+	color: #666;
+	margin-bottom:15px;
+	padding-bottom:10px;
+	border-bottom: 1px dashed #ccc;
+	span {
+		color: $themecolor;
+		padding-right:10px;
+	}
+}
+/*上一篇下一篇*/
+.np{
+	@extend .clearfix;
+	padding: 20px 0;
+	font-size:.7rem;
+	.next,
+	.prev{
+		width: 48%;
+		border-left:4px solid $themecolor;
+		padding-left: 15px;
+		background: rgba(200,200,200,.4);
+		line-height:30px;
+		@extend .tow;
+		a{
+			color: $themecolor;
+			&:hover{
+				text-decoration: underline;
+			}
+		}
+	}
+	.next{
+		float: right;
+	}
+	.prev{
+		float: left
+	}
+}

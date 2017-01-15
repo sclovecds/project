@@ -1,0 +1,143 @@
+// 可以传参的混合宏
+// 格式 @mixin placeholder($width){border-radius:$width}
+
+//图片居中显示
+@mixin jzimg($width,$height){
+	display: block;
+	width: $width;
+	height: $height;
+	text-align: center;
+	img{
+		max-width: 100%;
+		max-height:100%;
+		vertical-align: middle;
+	}
+	&:after{
+		content: "";
+		height:100%;
+		vertical-align: middle;
+		display: inline-block;
+	}
+}
+
+//元素垂直和水平居中显示
+@mixin center($width,$height){
+	display: block;
+	width: $width;
+	height:$height;
+	position: absolute;
+	left: 50%;
+	top:50%;
+	margin-top: -($height) / 2;
+	margin-left: -($width) / 2;
+}
+
+//文字居中
+@mixin text-center($width,$height){
+	width: $width;
+	height: $height;
+	text-align: center;
+	line-height: $height;
+}
+
+//水平居中
+@mixin vertical-center($width){
+	width: $width;
+	margin:0 auto;
+}
+
+//带文字居中的圆
+@mixin wz-center-circle($width,$color){
+	display: inline-block;
+	width: $width;
+	height: $width;
+	border-radius: 50%;
+	text-align: center;
+	line-height: $width;
+	background: $color;
+}
+
+//光秃秃的圆
+@mixin center-circle($width,$color){
+	display: inline-block;
+	width: $width;
+	height: $width;
+	border-radius: 50%;
+	background: $color;
+}
+
+//列表页a标签和span标签制作新闻
+@mixin news-list($width:70%,$float:left,$text-align:left){
+	display: inline-block;
+	width: $width;
+	float: $float;
+	text-align: $text-align;
+}
+
+
+//元素完全展开
+@mixin all_pos ($color){
+	position: absolute;
+	left: 0;top: 0;right: 0;bottom: 0;
+	background: $color;
+}
+/* 箭头
+arrow(direction,
+size,
+color);
+*/
+@mixin arrow($direction,$size,$color) {
+	width: 0;
+	height: 0;
+	line-height: 0;
+	font-size: 0;
+	overflow: hidden;
+	border-width: $size;
+	cursor: pointer;
+	@if $direction == top {
+		border-style: dashed dashed solid dashed;
+		border-color: transparent transparent $color transparent;
+		border-top: none;
+	}
+	@else if $direction == bottom {
+		border-style: solid dashed dashed dashed;
+		border-color: $color transparent transparent transparent;
+		border-bottom: none;
+	}
+	@else if $direction == right {
+		border-style: dashed dashed dashed solid;
+		border-color: transparent transparent transparent $color;
+		border-right: none;
+	}
+	@else if $direction == left {
+		border-style: dashed solid dashed dashed;
+		border-color: transparent $color transparent transparent;
+		border-left: none;
+	}
+}
+
+/*宽高在一起*/
+@mixin wdht ($width,$height) {
+	width: $width;
+	height: $height;
+}
+
+/*表单元素 placeholder 样式*/
+@mixin placeholder($color:#fff,$opacity:1){
+	&::-webkit-input-placeholder {
+		color: $color;
+		opacity: $opacity;
+	}
+	&:-moz-placeholder{
+		color: $color;
+		opacity: $opacity;
+	}
+	&::-moz-placeholder{
+		color: $color;
+		opacity: $opacity;
+	}
+	&:-ms-input-placeholder{
+		color: $color;
+		opacity: $opacity;
+	}
+}

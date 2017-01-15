@@ -1,0 +1,79 @@
+/*
+* 图文列表的新闻样式
+* 对应 代码块 newsList1
+*/
+.newsList {
+	li {
+		width: 100%;
+		@extend .clearfix;
+		padding-bottom:10px;
+		margin-bottom:10px;
+		border-bottom:1px dashed #ccc;
+		.tu {
+			@include jzimg(20%,127px);
+			border:1px solid #ccc;
+			background: #fff;
+		}
+		.wz {
+			width: 77%;
+			h3 {
+				font-size:.8rem;
+				color: #333;
+				line-height:2;
+				@extend .clearfix;
+				a {
+					@include news-list(80%);
+					@extend .tow;
+				}
+				span {
+					@include news-list(15%,right,right);
+					padding-right:5px;
+					font-weight: normal;
+					font-size:.7rem;
+					color: #666;
+				}
+			}
+			.info {
+				font-size: .7rem;
+				line-height:1.5;
+				color: #333;
+				height:63px;
+				overflow: hidden;
+			}
+			.more {
+				font-size:.7rem;
+				color: #f00;
+				float: right;
+				margin-top:10px;
+				position: relative;
+				&:after,
+				&:before {
+					position: absolute;
+					opacity: 0;
+					transition: all .5s ease;
+					transform: scale(0);
+				}
+				&:after{
+					content: "]";
+					right:10px;
+				}
+				&:before {
+					content: "[";
+					left:10px;
+				}
+				&:hover {
+					&:after {
+						right:-10px;
+						opacity: 1;
+						transform: scale(1);
+					}
+					&:before {
+						left:-10px;
+						opacity: 1;
+						transform: scale(1);
+					}
+				}
+			}
+		}
+	}
+}

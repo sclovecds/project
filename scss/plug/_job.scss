@@ -1,0 +1,70 @@
+//纯css自适应表格样式
+.jobs {
+	border: 1px solid #ccc;
+	width: 95%;
+	padding:0;
+	border-collapse: collapse;
+	border-spacing: 0;
+	margin: 0 auto;
+	thead{
+		background: $themecolor;
+		color: #fff;
+	}
+	tbody{
+		tr:nth-child(2n){
+			background: #eee;
+		}
+	}
+	tr{
+		border: 1px solid #ddd;
+		padding: 5px;
+	}
+	th,
+	td{
+		padding: 10px;
+		text-align: center;
+		font-size:0.7rem;
+		a{
+			color: #0a56d5;
+		}
+	}
+	th{
+		text-transform: uppercase;
+		letter-spacing: 1px;
+	}
+}
+
+
+@media screen and (max-width: 600px) {
+	.jobs {
+		border: 0;
+		thead {
+			display: none;
+		}
+		tbody{
+			tr:nth-child(2n){
+				background: none;
+			}
+		}
+		tr{
+			margin-bottom: 10px;
+			display: block;
+			border-bottom: 2px solid #ddd;
+		}
+		td{
+			display: block;
+			text-align: right;
+			font-size: 0.7rem;
+			border-bottom: 1px dotted #ccc;
+			&:last-child{
+				border-bottom: 0;
+			}
+			&:before{
+				content: attr(data-label);
+				float: left;
+				text-transform: uppercase;
+				font-weight: bold;
+			}
+		}
+	}
+}

@@ -1,0 +1,71 @@
+/* 右侧工具条样式 */
+#toolbar{
+	position: fixed;
+	right:5px;
+	top:40%;
+	width: 60px;
+	.top{
+		@include jzimg(60px,60px);
+	}
+	.items{
+		display: block;
+		.items_btn{
+			display: block;
+			width: 60px;
+			height:61px;
+			overflow: hidden;
+			position: relative;
+			background: $themecolor;
+			border-bottom:1px dashed #fff;
+			i{
+				display: block;
+				@include textcenter(60px,60px);
+				font-size:30px;
+				color: #fff;
+				transition: all 0.5s ease;
+				transform: translateX(0);
+			}
+			span{
+				position: absolute;
+				left: 0;
+				top:0;
+				z-index: 2;
+				padding:8px 15px;
+				font-size:14px;
+				color: #fff;
+				transition: all 0.5s ease;
+				transform: translateX(100%);
+			}
+			&:hover{
+				i{
+					transform: translateX(-100%);
+				}
+				span{
+					transform: translateX(0);
+				}
+			}
+		}
+	}
+	.items_weixin{
+		position: relative;
+		.weixin_img{
+			position: absolute;
+			@include jzimg(150px,150px);
+			right:60px;
+			bottom: 0;
+			transform-origin: right bottom;
+			transition: transform 1s ease;
+			transform:scale(0.00001);
+		}
+		&:hover{
+			.weixin_img {
+				transform: scale(1);
+			}
+		}
+	}
+	.gotoback{
+		.items_btn{
+			border-color: transparent;
+		}
+	}
+}

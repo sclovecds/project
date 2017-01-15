@@ -1,0 +1,87 @@
+/*在线留言*/
+.form-group {
+	$height:40px;
+	$width:350px;
+
+	width: 100%;
+	font-size: .8rem;
+	.title {
+		text-align: center;
+		color: $themecolor;
+		font-size: 1rem;
+		margin-bottom: 20px;
+	}
+	.input-group {
+		margin-bottom: 15px;
+		@extend .clearfix;
+		span {
+			display: inline-block;
+			width: 250px;
+			color: #333;
+			text-align: right;
+			float: left;
+			line-height:$height;
+			margin-right:5px;
+		}
+		input[type="text"],
+		input[type="password"],
+		textarea {
+			width: $width;
+			height: $height;
+			border: 1px solid $themecolor;
+			color: #333;
+			padding-left: 5px;
+			outline: none;
+			float: left;
+			border-radius: 10px;
+			padding-left:10px;
+			background: #fff;
+		}
+		input[type="text"].code {
+			width: 200px;
+		}
+		.img {
+			font-size:0;
+			@include jzimg(120px,$height);
+			display: inline-block;
+			float: left;
+			margin-left:10px;
+		}
+		.radio-group {
+			display: inline-block;
+			width: $width;
+			text-align: center;
+			label {
+				padding: 0 10px 0 5px;
+			}
+		}
+		textarea {
+			height: 150px;
+			vertical-align: top;
+			padding-top: 5px;
+			resize: none;
+			line-height:1.5;
+		}
+		i {
+			font-style: normal;
+			padding-left: 5px;
+		}
+	}
+	.btn-group {
+		text-align: center;
+		input[type="submit"],
+		input[type="reset"] {
+			border: 0;
+			background: $themecolor;
+			color: #fff;
+			font-size: 16px;
+			padding: 7px 30px;
+			border-radius: 5px;
+			box-shadow: 0 0 5px #999;
+			outline: none;
+		}
+		input[type="reset"] {
+			margin:0 150px 0 25px;
+		}
+	}
+}

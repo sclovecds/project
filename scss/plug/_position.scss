@@ -1,0 +1,18 @@
+/*面包屑导航栏样式*/
+.position{
+	height: 35px;
+	line-height:35px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #dedede;
+	font-size:0.7rem;
+	color: #666;
+	a{
+		&:after{
+			content: ">";
+			padding-left: 5px;
+		}
+	}
+	span{
+		color: #333;
+	}
+}

@@ -1,0 +1,24 @@
+//导入公用的样式文件
+@import "public/var";				//变量  必须放在第一位
+@import "public/normalize";			//重置浏览器样式
+@import "public/mixin";				//函数  需要var.scss
+@import "public/public";			//公共样式
+
+
+//页面样式
+@import "index";							//首页样式
+//@import "page";								//内页样式
+
+
+//导入插件样式文件
+//@import "plug/flexSlider";			//banner样式
+//@import "plug/pagination";			//分页样式
+//@import "plug/toolBar";				//工具条样式
+//@import "plug/iconfont";				//图标字体样式
+//@import "plug/job";					//自适应表格
+//@import "plug/np";					//详细页标题和上一篇下一篇
+//@import "plug/position";				//面包屑导航
+//@import "plug/backtotop";				//返回顶部
+//@import "plug/newsList2";				//图文列表形式的新闻列表
+//@import "plug/message";				//表单
+// @import "plug/honor";					//对应用layer写的荣誉资质页面
