@@ -28,9 +28,9 @@ body, div, span, h1, h2, h3, h4, h5, h6, p, em, img, strong, b, small, u, i, cen
 a {
 	text-decoration: none;
 	color: inherit;
+	transition: all .5s ease;
 	&:hover {
 		color: $themecolor;
-		text-decoration: underline;
 	}
 }
 
@@ -54,9 +54,8 @@ a {
 }
 
 html {
-	font-size: 125%;
-	font-family:"Microsoft YaHei";
-	-webkit-text-size-adjust:none;	//可用可不用  解决谷歌浏览器字体小于12px时依旧显示12px的bug
+	font-size: 14px;
+	font-family:Microsoft YaHei,arial,sans-serif;
 	overflow-x: hidden;
 	color: $wzcolor;
 }

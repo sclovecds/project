@@ -76,16 +76,13 @@
 
 
 //元素完全展开
-@mixin all_pos ($color){
+@mixin all_pos ($color,$l:0,$t:0,$b:0,$r:0){
 	position: absolute;
-	left: 0;top: 0;right: 0;bottom: 0;
+	top: $t;right: $r;bottom: $b;left: $l;
 	background: $color;
 }
-/* 箭头
-arrow(direction,
-size,
-color);
-*/
+
+//三角 (方向，大小，颜色)
 @mixin arrow($direction,$size,$color) {
 	width: 0;
 	height: 0;
@@ -116,13 +113,13 @@ color);
 	}
 }
 
-/*宽高在一起*/
+//宽高在一起
 @mixin wdht ($width,$height) {
 	width: $width;
 	height: $height;
 }
 
-/*表单元素 placeholder 样式*/
+//表单元素 placeholder 样式
 @mixin placeholder($color:#fff,$opacity:1){
 	&::-webkit-input-placeholder {
 		color: $color;
@@ -142,10 +139,33 @@ color);
 	}
 }
 
-/*利用padding制作可控制大小的竖线*/
-@mixin spansx($w1:16px,$w2:6px,$w3:2px,$bs:solid,$bc:#333){
-	padding: $w1 $w2 1px;/*上边距16px下边距1px控制高度，左右边距6px控制间距*/
-	font-size: 0;/*清除幽灵节点*/
-	margin-left: $w2 * 2;/*也是控制间距，与span的方向是反方向*/
-	border-left: $w3 $bs $bc;/*用边框来控制线的样式*/
+//利用padding制作可控制大小的竖线
+//$pt 上边距;$plr左右边距;$bw边框粗细，也就是竖线的粗细;$bs边框的样式，也是竖线的样式;$bc边框的颜色，也是竖线的颜色
+@mixin spansx($pt:16px,$plr:6px,$bw:2px,$bs:solid,$bc:#333){
+	padding: $pt $plr 1px;				//上边距16px下边距1px控制高度，左右边距6px控制间距
+	font-size: 0;						//清除幽灵节点
+	margin-left: $w2 * 2;				//也是控制间距，与span的方向是反方向
+	border-left: $w3 $bs $bc;			//用边框来控制线的样式
 }
+
+
+//元素自下往上缓动显示的动画(适用于返回顶部按钮，和导航菜单的二级显示)
+@mixin mmshow($showclasss,$ty:40px,$opa:.7){
+	opacity:0;
+	visibility: hidden;
+	transform: translateY($ty);
+	transition: all .5s ease;
+	&.#{$showclasss}{
+		visibility: visible;
+		transform: translateY(0);
+		@if $opa == 1 {
+			opacity: $opa;
+		}@else {
+			opacity: $opa;
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+}
+

@@ -235,6 +235,7 @@ color);
 */
 /*宽高在一起*/
 /*表单元素 placeholder 样式*/
+/*利用padding制作可控制大小的竖线*/
 /*网站常用css样式*/
 body, div, span, h1, h2, h3, h4, h5, h6, p, em, img, strong, b, small, u, i, center, dl, dt, dd, ol, ul, li, sub, sup, tt, var, del, dfn, ins, kbd, q, s, samp, strike, applet, object, iframe, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, blockquote, pre, a, abbr, acronym, address, big, cite, code, mark, audio, video, input, textarea, select {
   margin: 0;
@@ -265,6 +266,7 @@ a {
 }
 a:hover {
   color: #003a97;
+  text-decoration: underline;
 }
 
 .dpib {
@@ -286,7 +288,7 @@ a:hover {
 
 html {
   font-size: 125%;
-  font-family: "Microsoft YaHei";
+  font-family: Microsoft YaHei,arial,sans-serif;
   -webkit-text-size-adjust: none;
   overflow-x: hidden;
   color: #333;

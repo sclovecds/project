@@ -1,0 +1,47 @@
+.nav {
+	background: $themecolor;
+	@at-root .navmenu {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		height:40px;
+		> li {
+			flex:1;
+			position: relative;
+			transition: all .5s ease;
+			> a {
+				color: #fff;
+				text-align: center;
+				display: block;
+				line-height:40px;
+			}
+			&:hover,
+			&.cur {
+				background: $themecolor * 1.5;
+			}
+		}
+	}
+	@at-root .subnav {
+		position: absolute;
+		display: none;
+		z-index: 100;
+		width: 100%;
+		background: $themecolor * 1.5;
+		li {
+			line-height:30px;
+			text-align: center;
+			transition: all .5s ease;
+			a{
+				font-size:12px;
+				display: block;
+				color: #fff;
+			}
+			&:hover {
+				background: $themecolor;
+			}
+		}
+		li + li {
+			border-top:1px dotted #fff;
+		}
+	}
+}

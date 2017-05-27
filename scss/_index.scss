@@ -1,0 +1,122 @@
+.header {
+	padding: 10px 0;
+	.logo {
+		@include jzimg(441px,90px);
+	}
+
+	.lan {
+		line-height:25px;
+		margin-top:60px;
+		border:1px solid $themecolor;
+		border-radius:3px;
+		a{
+			display: inline-block;
+			padding: 0 15px;
+			&:hover {
+				background: $themecolor;
+				color: #fff;
+			}
+		}
+		a + a {
+			border-left:1px solid $themecolor;
+		}
+	}
+	.wxbox {
+		position: relative;
+		line-height:25px;
+		margin: 60px 0 0 20px;
+		cursor: pointer;
+		img {
+			vertical-align: middle;
+		}
+		.wximg {
+			position: absolute;
+			top:30px;
+			left:50%;
+			margin-left:-65px;
+			width: 130px;
+			height:130px;
+			background: #fff;
+			border-radius: 5px;
+			padding: 5px;
+			box-shadow: 0 0 5px #666;
+			opacity:0;
+			visibility: hidden;
+			transition: all .5s ease;
+			transform: translateY(30px);
+			img {
+				width: 100%;
+			}
+			&:before,
+			&:after{
+				position: absolute;
+				z-index: 10;
+				content: '';
+				@include arrow(top,5px,#fff);
+				top:-5px;
+				left:60px;
+			}
+			&:after{
+				@include arrow(top,5px,#999);
+				top:-6px;
+				z-index: 9;
+			}
+		}
+		&:hover {
+			.wximg {
+				opacity:1;
+				visibility: visible;
+				transform: translateY(0);
+			}
+		}
+	}
+}
+
+//nav
+.nav {
+	background: $themecolor;
+	@at-root .navmenu {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		height:40px;
+		> li {
+			flex:1;
+			position: relative;
+			transition: all .5s ease;
+			> a {
+				color: #fff;
+				text-align: center;
+				display: block;
+				line-height:40px;
+			}
+			&:hover,
+			&.cur {
+				background: $themecolor * 1.5;
+			}
+		}
+	}
+	@at-root .subnav {
+		position: absolute;
+		display: none;
+		z-index: 100;
+		width: 100%;
+		background: $themecolor * 1.5;
+		li {
+			line-height:30px;
+			text-align: center;
+			transition: all .5s ease;
+			a{
+				font-size:12px;
+				display: block;
+				color: #fff;
+			}
+			&:hover {
+				background: $themecolor;
+			}
+		}
+		li + li {
+			border-top:1px dotted #fff;
+		}
+	}
+}

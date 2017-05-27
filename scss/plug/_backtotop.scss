@@ -1,15 +1,13 @@
 /*返回顶部*/
 #backtotop {
 	position: fixed;
+	z-index:9999;
 	width: 41px;
 	height: 38px;
 	overflow: hidden;
 	left: 50%;
 	margin-left:610px;
-	bottom: 10px;
+	bottom: 40px;
 	background: url(../images/toolbar/backtotop.png) 0 -358px;
-	opacity: .7;
-	&:hover {
-		opacity:1;
-	}
+	@include mmshow(show_back,40px);
 }
